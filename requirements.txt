@@ -1,0 +1,9 @@
+librosa==0.9.1
+numpy
+omegaconf==2.2.2
+pytorch_lightning==1.6.3
+scikit_learn
+scipy
+SoundFile
+torchcontrib==0.0.2
+tqdm==4.64.0
