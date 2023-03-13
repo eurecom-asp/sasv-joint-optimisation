@@ -2,6 +2,10 @@
 
 This repository provides codes to reproduce our paper [On the potential of jointly-optimised solutions to spoofing attack detection and automatic speaker verification](https://arxiv.org/pdf/2209.00506.pdf) accepted to the IberSPEECH 2022 conference.
 
+### Notes
+
+Codes to our ICASSP 2023 paper "Can spoofing countermeasure and speaker verification systems be jointly optimised?" will be uploaded soon.
+
 ### Getting started
 Codes were tested using a GeForce RTX 3090 GPU with CUDA Version==11.2. Please try to install the dependencies first:
 ```
