@@ -24,11 +24,11 @@ Please change the `database` defined in each `.conf` file from `'/path/to/your/L
 ### Training 
 To jointly-optimise the ASV and CM sub-systems:
 ```
-python main.py --config ./config/ResNetSE34V2_AASIST_OC.conf
+python main.py --config ./configs/ResNetSE34V2_AASIST_OC.conf
 ```
 To train a back-end classifier and keep ASV and CM fixed:
 ```
-python main.py --config ./config/ResNetSE34V2_AASIST_OC_fixed.conf
+python main.py --config ./configs/ResNetSE34V2_AASIST_OC_fixed.conf
 ```
 
 ### Pre-trained models
