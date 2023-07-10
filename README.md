@@ -6,6 +6,8 @@ This repository provides codes to reproduce our paper [On the potential of joint
 
 Codes to our ICASSP 2023 paper "Can spoofing countermeasure and speaker verification systems be jointly optimised?" will be uploaded soon.
 
+(July 10, 2023) We've uploaded the pre-trained models and score files in our experiment in [here](https://nextcloud.eurecom.fr/s/84zF6XEDsXFjWGo). Please notice that due to storage limit, only the best performing model of each configuration is uploaded.
+
 ### Getting started
 Codes were tested using a GeForce RTX 3090 GPU with CUDA Version==11.2. Please try to install the dependencies first:
 ```
