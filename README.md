@@ -27,6 +27,8 @@ The ASVspoof 2019 database can be downloaded from [here](https://datashare.ed.ac
 
 Please change the `database` defined in each `.conf` file from `'/path/to/your/LA/'` to its actual path.
 
+The FAD database can be downloaded from [here](https://zenodo.org/record/6623227), please read the notes for arranging the database.
+
 ### Training 
 To jointly-optimise the ASV and CM sub-systems:
 ```
@@ -39,7 +41,7 @@ python main.py --config ./configs/ResNetSE34V2_AASIST_OC_fixed.conf
 
 ### Pre-trained models
 
-You can try to calculate the evaluation score by:
+The pre-trained models are uploaded [here](https://nextcloud.eurecom.fr/s/84zF6XEDsXFjWGo). You can try to calculate the evaluation score by:
 ```
 python save_sasv_score.py
 ```
