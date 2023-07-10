@@ -1,0 +1,3 @@
+lr-Adam,lr-Adam-1,step,trn_loss_step,epoch
+5e-05,5e-05,49,,
+,,49,1.0625827312469482,0

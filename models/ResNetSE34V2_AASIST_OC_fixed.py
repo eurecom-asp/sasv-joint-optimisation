@@ -72,9 +72,9 @@ class CMModel():
                 input_tmp = input_data
                 
             # [batch, dim]
-            emb_CM, _  = self.model(input_tmp)
+            emb_CM, score_CM  = self.model(input_tmp)
         # print(emb_CM.shape)
-        return emb_CM
+        return emb_CM, score_CM
 
 asv_emb = ASVModel()
 cm_emb = CMModel()
@@ -118,7 +118,7 @@ class Model(torch.nn.Module):
         asv_enr_emb = asv_emb.extract_feat(asv_enr_wav.squeeze(-1))   # shape: (bs, 512)
         asv_tst_emb = asv_emb.extract_feat(asv_tst_wav.squeeze(-1))   # shape: (bs, 512)
 
-        spf_emb = cm_emb.extract_feat(asv_tst_wav.squeeze(-1)) # shape: (bs, 160)
+        spf_emb, _ = cm_emb.extract_feat(asv_tst_wav.squeeze(-1)) # shape: (bs, 160)
         spf_emb = self.spf_fc(spf_emb) # shape: (bs, 512)
         # pred_spf = self.spf_out(spf_emb)
 

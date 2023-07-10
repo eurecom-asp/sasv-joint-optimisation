@@ -1,12 +1,16 @@
 # sasv-joint-optimisation 
 
-This repository provides codes to reproduce our paper [On the potential of jointly-optimised solutions to spoofing attack detection and automatic speaker verification](https://arxiv.org/pdf/2209.00506.pdf) accepted to the IberSPEECH 2022 conference.
+This repository provides codes to reproduce our papers on joint optimisation of speaker verification and spoofing countermeasure systems.
+
+The corresponding papers are [On the potential of jointly-optimised solutions to spoofing attack detection and automatic speaker verification](https://arxiv.org/pdf/2209.00506.pdf) accepted to IberSPEECH 2022 and [Can spoofing countermeasure and speaker verification systems be jointly optimised?](https://arxiv.org/pdf/2303.07073.pdf) accepted to ICASSP 2023.
 
 ### Notes
 
-Codes to our ICASSP 2023 paper "Can spoofing countermeasure and speaker verification systems be jointly optimised?" will be uploaded soon.
+~~Codes to our ICASSP 2023 paper "Can spoofing countermeasure and speaker verification systems be jointly optimised?" will be uploaded soon.~~
 
-(July 10, 2023) We've uploaded the pre-trained models and score files in our experiment in [here](https://nextcloud.eurecom.fr/s/84zF6XEDsXFjWGo). Please notice that due to storage limit, only the best performing model of each configuration is uploaded.
+(July 10, 2023) We've uploaded the <strong>pre-trained models and score files</strong> used in our experiment in [here](https://nextcloud.eurecom.fr/s/84zF6XEDsXFjWGo). Please notice that due to storage limit, only the best performing model of each configuration is uploaded.
+
+(July 10, 2023, two hours later) We've uploaded the codes for the ICASSP paper. For experiments related to FAD database, please first download the data from [here](https://zenodo.org/record/6623227), convert all .wav files under `'FAD/train/real/aishell3/'` and `'FAD/train/fake/'` to .flac and copy them to `'/path/to/your/LA/ASVspoof2019_LA_train/flac/'`.
 
 ### Getting started
 Codes were tested using a GeForce RTX 3090 GPU with CUDA Version==11.2. Please try to install the dependencies first:
@@ -34,21 +38,42 @@ python main.py --config ./configs/ResNetSE34V2_AASIST_OC_fixed.conf
 ```
 
 ### Pre-trained models
-We provide pre-trained models in `'pre_trained_models/'`.
 
 You can try to calculate the evaluation score by:
 ```
 python save_sasv_score.py
 ```
+And for the scores of ASV sub-system, please first try:
+```
+python save_asv_embeddings.py --model=path/to/your/pre_trained_model.ckpt --comment="conf1"
+```
+then
+```
+python save_asv_score.py --comment="conf1"
+```
+For the scores of CM sub-system, please try:
+```
+python save_cm_score.py --model=path/to/your/pre_trained_model.ckpt --comment="conf1"
+```
 
 ### References
 If you find this repository useful, please consider citing:
 ```
-@inproceedings{sasv_joint,
+@inproceedings{sasv_joint_vol1,
   author={Wanying Ge and Hemlata Tak and Massimiliano Todisco and Nicholas Evans},
   title={{On the potential of jointly-optimised solutions to spoofing attack detection and automatic speaker verification}},
   year=2022,
-  booktitle={Proc. IberSPEECH 2022 (to appear)},
+  booktitle={Proc. IberSPEECH 2022},
+  pages={51--55},
+}
+```
+and
+```
+@inproceedings{sasv_joint_vol2,
+  author={Wanying Ge and Hemlata Tak and Massimiliano Todisco and Nicholas Evans},
+  title={{Can spoofing countermeasure and speaker verification systems be jointly optimised?}},
+  year=2023,
+  booktitle={Proc. ICASSP 2023},
 }
 ```
 
