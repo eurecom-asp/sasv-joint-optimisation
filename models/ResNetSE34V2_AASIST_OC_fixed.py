@@ -141,7 +141,7 @@ class Model(torch.nn.Module):
         asv_enr_emb = asv_emb.extract_feat(asv_enr_wav.squeeze(-1))   # shape: (bs, 512)
         asv_tst_emb = asv_emb.extract_feat(asv_tst_wav.squeeze(-1))   # shape: (bs, 512)
         
-        spf_emb = cm_emb.extract_feat(asv_tst_wav) # shape: (bs, 160)
+        spf_emb, _ = cm_emb.extract_feat(asv_tst_wav) # shape: (bs, 160)
         spf_emb = self.spf_fc(spf_emb) # shape: (bs, 512)
         # pred_spf = self.spf_out(spf_emb)
 
